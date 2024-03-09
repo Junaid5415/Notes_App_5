@@ -17,11 +17,11 @@ function deleteText(image, paragraph) {
 }
 
 function saveData() {
-    localStorage.setItem('data', textDiv.innerHTML);
+    localStorage.setItem('item', textDiv.innerHTML);
 }
 
 function showData() {
-    textDiv.innerHTML = localStorage.getItem('data');
+    textDiv.innerHTML = localStorage.getItem('item');
     // Add event listener for delete function after loading content
     const deleteImages = document.querySelectorAll('.p .delete');
     console.log(deleteImages);

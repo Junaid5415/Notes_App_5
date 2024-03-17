@@ -1,7 +1,13 @@
-const button = document.querySelector('#title button');
+const button = document.querySelector('#title .create');
 const textDiv = document.querySelector('#text');
 
+const save = document.querySelector('#title .save')
+
 let p;
+
+save.addEventListener('click', ()=>{
+    saveData()
+})
 
 function deleteText(image, paragraph) {
     image.addEventListener('click', () => {
@@ -22,14 +28,10 @@ function saveData() {
 
 function showData() {
     textDiv.innerHTML = localStorage.getItem('item');
-    // Add event listener for delete function after loading content
     const deleteImages = document.querySelectorAll('.p .delete');
-    console.log(deleteImages);
-
     deleteImages.forEach((image, index) => {
         const paragraph = image.parentElement;
         deleteText(image, paragraph);
-        saveData()
     });
 }
 
@@ -38,14 +40,13 @@ button.addEventListener('click', () => {
     p.setAttribute('contenteditable', 'true');
     p.classList.add('p');
     textDiv.appendChild(p);
-
     let image = document.createElement('img');
-    image.classList.add('delete'); // Make sure the image has the correct class
+    image.classList.add('delete');
     image.src = 'images/delete.png';
     p.appendChild(image);
-
     deleteText(image, p);
-    saveData();
-    showData();
-});;    
+});
 showData();
+
+
+

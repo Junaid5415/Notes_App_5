@@ -47,6 +47,35 @@ body{
     transition: opacity 150ms ease-in-out, translateY 15ms ease-in, border 150ms, outline 150ms, scale 150ms ease-in-out;
 }
 
+#title .save{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    font-size: medium;
+    padding: .8em 1.2em;
+    border-radius: 3em;
+    border: none;
+    cursor: grab;
+    background-image: linear-gradient(to bottom, #942CF3, #581a96);
+    color: white;
+    transition: opacity 150ms ease-in-out, translateY 15ms ease-in, border 150ms, outline 150ms, scale 150ms ease-in-out;
+}
+
+#title .save:hover{
+    opacity: .8;
+    scale: 1.1;
+
+}
+
+#title .save:active{
+    cursor: grabbing;
+    opacity: .6;
+    transform: translateY(2px);
+}
+
+
 #title .create img{
     width: 1em;
     max-width: 1.4em;
